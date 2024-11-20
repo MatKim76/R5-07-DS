@@ -18,7 +18,7 @@ jobs:
       - name: Create Q5_archive_date.txt
         run: |
           DATE=$(date '+%d-%m-%Y')
-          FILENAME="Q4_archive_${DATE}.txt"
+          FILENAME="Q5_archive_${DATE}.txt"
           echo "Nom: Sa Prénom: Matéo" > $FILENAME
           cat Q5.java >> $FILENAME
 
