@@ -2,11 +2,14 @@ name: Q1 Workflow
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  create-archive:
+  build:
+    # JY :
+    permissions : write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
