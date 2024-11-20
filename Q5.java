@@ -17,7 +17,7 @@ public class Q5 {
 
             for (int i = 1; i <= nombreEtoiles; i++) 
             {
-                for (int j = i; j > 0; j--)
+                for (int j = 0; j < i; j++)
                   {
                     System.out.print("*");
                 }
