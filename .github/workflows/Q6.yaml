@@ -32,6 +32,7 @@ jobs:
         run: |
           git config --global user.name MatKim76
           git config --global user.email mateo.kim.sa@gmail.com
+          git pull
           git add Q6_archive_*.txt Q6_différences.txt
           git commit -m "Add Q6_archive and Q6_différences files"
           git push
