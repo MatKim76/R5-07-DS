@@ -14,7 +14,7 @@ public class Q6 {
                 System.out.println("Veuillez entrer un nombre positif.");
                 return;
             }
-
+            //oulalala jai changer wowowo
             for (int i = 1; i <= nombreEtoiles; i++) 
             {
                 for (int j = i; j > 0; j--)
