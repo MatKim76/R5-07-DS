@@ -25,5 +25,6 @@ jobs:
           git config --global user.name MatKim76
           git config --global user.email mateo.kim.sa@gmail.com
           git add Q3_archive_java.txt
+          git status
           git commit -m "Add Q3_archive_java.txt"
           git push
