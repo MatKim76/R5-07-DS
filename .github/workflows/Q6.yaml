@@ -1,0 +1,37 @@
+name: Q6 Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  create-archive:
+    # JY :
+    permissions : write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Q6_archive_date.txt
+        run: |
+          DATE=$(date '+%d-%m-%Y-%H%M%S')
+          echo "Nom: VotreNom Prénom: VotrePrénom" > Q6_archive_${DATE}.txt
+          echo "Nombre de lignes et caractères:" >> Q6_archive_${DATE}.txt
+          wc Q6.java >> Q6_archive_${DATE}.txt
+
+      - name: Create Q6_différences.txt
+        run: |
+          PREV_FILE=$(ls Q6_archive_*.txt | sort | tail -2 | head -1)
+          NEW_FILE=$(ls Q6_archive_*.txt | sort | tail -1)
+          diff $PREV_FILE $NEW_FILE > Q6_différences.txt || true
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name MatKim76
+          git config --global user.email mateo.kim.sa@gmail.com
+          git add Q6_archive_*.txt Q6_différences.txt
+          git commit -m "Add Q6_archive and Q6_différences files"
+          git push
