@@ -17,8 +17,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
+          git config --global user.name MatKim76
+          git config --global user.email mateo.kim.sa@gmail.com
           git add Q1_archive_README.md
           git commit -m "Add Q1_archive_README.md"
           git push
