@@ -1,6 +1,0 @@
-1,3c1
-< Nom: VotreNom Prénom: VotrePrénom
-< Nombre de lignes et caractères:
-<  30  77 808 Q6.java
----
-> 
