@@ -18,7 +18,7 @@ jobs:
       - name: Create Q6_archive_date.txt
         run: |
           DATE=$(date '+%d-%m-%Y-%H%M%S')
-          echo "Nom: VotreNom Prénom: VotrePrénom" > Q6_archive_${DATE}.txt
+          echo "Nom: Sa Prénom: Matéo" > Q6_archive_${DATE}.txt
           echo "Nombre de lignes et caractères:" >> Q6_archive_${DATE}.txt
           wc Q6.java >> Q6_archive_${DATE}.txt
 
