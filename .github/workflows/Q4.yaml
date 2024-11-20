@@ -18,13 +18,14 @@ jobs:
       - name: Create Q4_archive_date.txt
         run: |
           DATE=$(date '+%d-%m-%Y')
-          echo "Nom: Sa Prénom: Matéo" > Q4_archive_${DATE}.txt
-          cat Q4.java >> Q4_archive_${DATE}.txt
+          FILENAME="Q4_archive_${DATE}.txt"
+          echo "Nom: Sa Prénom: Matéo" > $FILENAME
+          cat Q4.java >> $FILENAME
 
       - name: Commit and push changes
         run: |
           git config --global user.name MatKim76
           git config --global user.email mateo.kim.sa@gmail.com  
-          git add Q4_archive_${DATE}.txt
-          git commit -m "Add Q4_archive_${DATE}.txt"
+          git add Q4_archive_*.txt
+          git commit -m "Add Q4_archive.txt"
           git push
